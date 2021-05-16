@@ -9,7 +9,8 @@
     "format:check": "prettier --check '*/**/*.{js,ts}'",
     "format:write": "prettier --write '*/**/*.{js,ts}'",
     "lint": "eslint '*/**/*.{js,ts}'",
-    "codegen": "graphql-codegen --config utils/apollo/codegen.yml"
+    "codegen": "graphql-codegen --config utils/apollo/codegen.yml",
+    "codegen:exchange": "graphql-codegen --config utils/apollo/exchange/codegen.yml"
   },
   "husky": {
     "hooks": {

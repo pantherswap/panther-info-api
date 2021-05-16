@@ -111,3 +111,28 @@ Returns data for the top ~1000 PantherSwap pairs, sorted by reserves.
   }
 }
 ```
+
+## [`/stats`](https://api.pantherswap.info/api/stats)
+
+Returns stats of PantherSwap exchange. 
+
+### Request
+
+`GET https://api.pantherswap.info/api/stats`
+
+### Response
+
+```json5
+{
+  "updated_at": 1234567,              // UNIX timestamp
+  "data": {
+    "totalLiquidityBNB": "...", // total liquidity in BNB
+    "totalLiquidityUSD": "...", // total liquidity in USD
+    "totalVolumeBNB": "...", // total volume in BNB
+    "totalVolumeUSD": "...", // total volume in USD
+    "oneDayVolumeBNB": "...", // last 24h volume in BNB
+    "oneDayVolumeUSD": "...", // last 24h volume in USD
+    "oneDayTxCount": 12345, // last 24h tx count
+  }
+}
+```
