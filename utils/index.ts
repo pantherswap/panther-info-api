@@ -58,7 +58,7 @@ export async function getTopPairs(): Promise<MappedDetailedPair[]> {
       limit: TOP_PAIR_LIMIT,
       excludeTokenIds: BLACKLIST,
     },
-    fetchPolicy: "cache-first",
+    fetchPolicy: "network-only",
   });
 
   if (topPairsErrors && topPairsErrors.length > 0) {
@@ -75,7 +75,7 @@ export async function getTopPairs(): Promise<MappedDetailedPair[]> {
       pairIds: pairs.map((pair) => pair.id),
       blockNumber: +firstBlock,
     },
-    fetchPolicy: "cache-first",
+    fetchPolicy: "network-only",
   });
 
   if (yesterdayVolumeErrors && yesterdayVolumeErrors.length > 0) {
