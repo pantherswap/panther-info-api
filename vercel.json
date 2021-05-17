@@ -33,7 +33,7 @@
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=60, s-maxage=60"
+          "value": "public, max-age=120, s-maxage=120"
         },
         {
           "key": "Pragma",

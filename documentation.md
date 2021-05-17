@@ -4,7 +4,7 @@ All PantherSwap pairs consist of two different tokens. BNB is not a native curre
 
 The canonical WBNB address used by the PantherSwap interface is `0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c`.
 
-Results are cached for 5 minutes (or 300 seconds).
+Results are cached for 2 minutes (or 120 seconds).
 
 ## [`/summary`](https://api.pantherswap.info/api/summary)
 
