@@ -39,8 +39,12 @@ export async function getGlobalData(): Promise<GlobalData> {
     variables: {
       factoryAddress: FACTORY_ADDRESS,
     },
-    fetchPolicy: "cache-first",
+    fetchPolicy: "network-only",
   });
+
+  if (currentResultErrors && currentResultErrors.length > 0) {
+    throw new Error("Failed to fetch current uniswap factories from subgraph");
+  }
 
   const { data: oneDayAgoResult, errors: oneDayAgoResultErrors } = await client.query<
     UniswapFactoriesQuery,
@@ -51,11 +55,11 @@ export async function getGlobalData(): Promise<GlobalData> {
       factoryAddress: FACTORY_ADDRESS,
       blockNumber: +oneDayAgoBlock,
     },
-    fetchPolicy: "cache-first",
+    fetchPolicy: "network-only",
   });
 
-  if (!currentResult.uniswapFactories[0] || !oneDayAgoResult.uniswapFactories[0]) {
-    throw new Error("Failed to fetch uniswap factories from subgraph");
+  if (oneDayAgoResultErrors && oneDayAgoResultErrors.length > 0) {
+    throw new Error("Failed to fetch one day ago uniswap factories from subgraph");
   }
 
   const currentData = currentResult.uniswapFactories[0];
