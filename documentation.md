@@ -126,13 +126,13 @@ Returns stats of PantherSwap exchange.
 {
   "updated_at": 1234567,              // UNIX timestamp
   "data": {
-    "totalLiquidityBNB": "...", // total liquidity in BNB
-    "totalLiquidityUSD": "...", // total liquidity in USD
-    "totalVolumeBNB": "...", // total volume in BNB
-    "totalVolumeUSD": "...", // total volume in USD
-    "oneDayVolumeBNB": "...", // last 24h volume in BNB
-    "oneDayVolumeUSD": "...", // last 24h volume in USD
-    "oneDayTxCount": 12345, // last 24h tx count
+    "total_liquidity_BNB": "...", // total liquidity in BNB
+    "total_liquidity_USD": "...", // total liquidity in USD
+    "total_volume_BNB": "...", // total volume in BNB
+    "total_volume_USD": "...", // total volume in USD
+    "volume_BNB": "...", // last 24h volume in BNB
+    "volume_USD": "...", // last 24h volume in USD
+    "tx_count": 12345, // last 24h tx count
   }
 }
 ```

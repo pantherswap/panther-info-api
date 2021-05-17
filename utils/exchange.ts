@@ -9,13 +9,13 @@ import {
 } from "./generated/exchange/subgraph";
 
 export type GlobalData = {
-  totalLiquidityBNB: string;
-  totalLiquidityUSD: string;
-  totalVolumeBNB: string;
-  totalVolumeUSD: string;
-  oneDayVolumeBNB: string;
-  oneDayVolumeUSD: string;
-  oneDayTxCount: number;
+  total_liquidity_BNB: string;
+  total_liquidity_USD: string;
+  total_volume_BNB: string;
+  total_volume_USD: string;
+  volume_BNB: string;
+  volume_USD: string;
+  tx_count: number;
 };
 export const FACTORY_ADDRESS = "0x670f55c6284c629c23baE99F585e3f17E8b9FC31";
 export const SKIP_BLOCKS = 200;
@@ -69,13 +69,13 @@ export async function getGlobalData(): Promise<GlobalData> {
 
   // return data
   let data = <GlobalData>{};
-  data.totalLiquidityBNB = currentData.totalLiquidityETH;
-  data.totalLiquidityUSD = currentData.totalLiquidityUSD;
-  data.totalVolumeBNB = currentData.totalVolumeETH;
-  data.totalVolumeUSD = currentData.totalVolumeUSD;
-  data.oneDayVolumeBNB = oneDayVolumeBNB.toString();
-  data.oneDayVolumeUSD = oneDayVolumeUSD.toString();
-  data.oneDayTxCount = oneDayTxCount;
+  data.total_liquidity_BNB = currentData.totalLiquidityETH;
+  data.total_liquidity_USD = currentData.totalLiquidityUSD;
+  data.total_volume_BNB = currentData.totalVolumeETH;
+  data.total_volume_USD = currentData.totalVolumeUSD;
+  data.volume_BNB = oneDayVolumeBNB.toString();
+  data.volume_USD = oneDayVolumeUSD.toString();
+  data.tx_count = oneDayTxCount;
 
   return data;
 }
